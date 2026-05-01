@@ -24,4 +24,16 @@ public class SpotController {
     public Spot create(@RequestBody Spot spot) {
         return spotRepository.save(spot);
     }
+
+    @PutMapping("/{id}")
+    public Spot update(@PathVariable Long id, @RequestBody Spot spot) {
+        spot.setId(id);
+        return spotRepository.save(spot);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        spotRepository.deleteById(id);
+    }
+
 }
