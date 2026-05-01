@@ -2,10 +2,11 @@ package com.example.chionmeshimap;
 
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
 @RequestMapping("/api/spots")
-@CrossOrigin(origins = {"http://localhost:5173", "https://chion-meshi-front.vercel.app"})
+@CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS})
 public class SpotController {
 
     private final SpotRepository spotRepository;
