@@ -5,7 +5,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/spots")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {"http://localhost:5173", "https://chion-meshi-front.vercel.app"})
 public class SpotController {
 
     private final SpotRepository spotRepository;
